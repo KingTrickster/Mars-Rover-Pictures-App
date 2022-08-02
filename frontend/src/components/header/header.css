@@ -1,0 +1,16 @@
+.header {
+    padding: 1vh 0 1vh 0;
+    text-align: center;
+    background: -webkit-linear-gradient(to right, #000428, #004e92); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000428, #004e92);
+    border-radius: 1.5px;
+  }
+
+  .header img {
+    margin-left: 1.5%;
+    display: flex;
+    width: 5vw;
+    height: auto;
+    text-align: left;
+    align-self: center;
+  }

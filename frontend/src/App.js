@@ -1,10 +1,13 @@
 import './App.css';
+import Rover from './components/roverPictures/rover'
 import Layout from './layout/layout';
 
 function App() {
   return (
     <div className="App">
-      <Layout />
+      <Layout>
+        <Rover/>
+      </Layout>
     </div>
   );
 }

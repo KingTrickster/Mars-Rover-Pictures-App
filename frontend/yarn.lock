@@ -7212,6 +7212,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-clickable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-clickable/-/react-clickable-1.1.0.tgz#88fb62e1e659ea9ec98451688b51e037ae292bfb"
+  integrity sha512-4x5TscVFO1mgEpIGOkVlBt2iZtlNBKSPYHEOFE9/8j3oSLMTlZncLJHipqBkaN7Fga4WsJwivyCebnTMiVaKiA==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"

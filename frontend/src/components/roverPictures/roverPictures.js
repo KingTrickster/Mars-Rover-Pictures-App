@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import './roverPictures.css';
 import axios from 'axios';
 import { Clickable } from 'react-clickable'
+import 'bootstrap/dist/css/bootstrap.css';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const RoverPictures = () => {
     const toggleClassFhaz = () => {
@@ -139,68 +142,75 @@ const RoverPictures = () => {
         fetchData()
     }, [])
     return(
-    <div className="rover-info-container">
+    <div className="rover-info-container ">
+        <Row>
+            <Col sm>
         <div className="cameras-list">
-            <div className="camera-container pictures-title">
+            <h3>List of Cameras available</h3>
                 <li className={isFhazActive ? 'clickable title active': 'clickable title inActive'} id = "fhaz" onClick={toggleClassFhaz}>
                     Front Hazard Avoidance Camera
                 </li>
-                <li className= {isRhazActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassRhaz}>
+                <li className= {isRhazActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassRhaz}>
                     Rear Hazard Avoidance Camera
                 </li>
-                <li className={isMastActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassMast}>
+                <li className={isMastActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassMast}>
                     Mast Camera
                 </li>
-                <li className={isChemcamActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassChemcam}>
+                <li className={isChemcamActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassChemcam}>
                     Chemistry and Camera Complex
                 </li>
-                <li className={isMahliActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassMahli}>
+                <li className={isMahliActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassMahli}>
                     Mars Hand Lens Imager
                 </li>
-                <li className={isMardiActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassMardi}>
+                <li className={isMardiActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassMardi}>
                     Mars Descent Imager
                 </li>
-                <li className={isNavcamActive ? 'clickable title active' : 'title inActive'} onClick={toggleClassNavcam}>
+                <li className={isNavcamActive ? 'clickable title active' : 'clickable title inActive'} onClick={toggleClassNavcam}>
                     Navigation Camera
                 </li>
-                <div className="fhaz-pictures grid">
-                   
-            { !fhazPhotos ? '' : fhazPhotos?.map((photo) => {
-                return <img className={isFhazActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="Fhaz camera" />;
-            })}
-        </div>
-        <div className="rhaz-pictures grid">
-            { !rhazPhotos ? 'Loading...' : rhazPhotos?.map((photo) => {
-                return <img className={isRhazActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="Rhaz camera" />;
-            })}
-        </div>
-        <div className="mast-pictures  grid">
-            { !mastPhotos ? 'Loading...' : mastPhotos?.map((photo) => {
-                return <img className={isMastActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mast camera" />;
-            })}
-        </div>
-        <div className="chemcam-pictures  grid">
-            { !chemcamPhotos ? 'Loading...' : chemcamPhotos?.map((photo) => {
-                return <img className={isChemcamActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="chemcam camera" />;
-            })}
-        </div>
-        <div className="mahli-pictures  grid">
-            { !mahliPhotos ? 'Loading...' : mahliPhotos?.map((photo) => {
-                return <img className={isMahliActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mahli camera" />;
-            })}
-        </div>
-        <div className="mardi-pictures  grid">
-            { !mardiPhotos ? 'Loading...' : mardiPhotos?.map((photo) => {
-                return <img className={isMardiActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mardi camera" />;
-            })}
-        </div>
-        <div className="navcam-pictures  grid">
-            { !navcamPhotos ? 'Loading...' : navcamPhotos?.map((photo) => {
-                return <img className={isNavcamActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="navcam camera" />;
-            })}
-        </div>
             </div>
+            </Col>
+            <Col >
+            <div className="camera-container ">
+            <div className="fhaz-pictures grid">
+                   
+                   { !fhazPhotos ? '' : fhazPhotos?.map((photo) => {
+                       return <img className={isFhazActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="Fhaz camera" />;
+                   })}
+               </div>
+               <div className="rhaz-pictures grid">
+                   { !rhazPhotos ? 'Loading...' : rhazPhotos?.map((photo) => {
+                       return <img className={isRhazActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="Rhaz camera" />;
+                   })}
+               </div>
+               <div className="mast-pictures  grid">
+                   { !mastPhotos ? 'Loading...' : mastPhotos?.map((photo) => {
+                       return <img className={isMastActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mast camera" />;
+                   })}
+               </div>
+               <div className="chemcam-pictures  grid">
+                   { !chemcamPhotos ? 'Loading...' : chemcamPhotos?.map((photo) => {
+                       return <img className={isChemcamActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="chemcam camera" />;
+                   })}
+               </div>
+               <div className="mahli-pictures  grid">
+                   { !mahliPhotos ? 'Loading...' : mahliPhotos?.map((photo) => {
+                       return <img className={isMahliActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mahli camera" />;
+                   })}
+               </div>
+               <div className="mardi-pictures  grid">
+                   { !mardiPhotos ? 'Loading...' : mardiPhotos?.map((photo) => {
+                       return <img className={isMardiActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="mardi camera" />;
+                   })}
+               </div>
+               <div className="navcam-pictures  grid">
+                   { !navcamPhotos ? 'Loading...' : navcamPhotos?.map((photo) => {
+                       return <img className={isNavcamActive ? 'carousel-picture item': 'hidden'} key={photo.id} photo={photo} src={photo.img_src} alt="navcam camera" />;
+                   })}
+               </div>
         </div>
+        </Col>
+        </Row>
     </div>
     )
 }
